@@ -1,0 +1,70 @@
+{% extends 'home.html' %}
+{% block link4 %}active{% endblock link4 %}
+{% load static %}
+{% block content %}
+<div class="breadcrumbs">
+  <div class="page-header d-flex align-items-center" style="height: 375px; background-image: url('/static/img/portada_g.gif');">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>PLANES</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'home' %}">INICIO</a></li>
+        <li>PLANES</li>
+      </ol>
+    </div>
+  </nav>
+</div>
+<section id="pricing" class="pricing">
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>CHEVROLET AVEO FAMILY</h3>
+          <div class="card-img">
+            <img src="{% static 'img/auto1.jpg' %}" alt="" class="img-fluid">
+          </div>
+          <h4><sup>$</sup>141<span> /mes </span></h4>
+          <a href="https://bit.ly/autoprontosas" class="buy-btn">Cotiza Ahora</a>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>SUV HAVAL H6</h3>
+          <div class="card-img">
+            <img src="{% static 'img/auto2.jpg' %}" alt="" class="img-fluid">
+          </div>
+          <h4><sup>$</sup>247<span> / mes</span></h4>
+          <a href="https://bit.ly/autoprontosas" class="buy-btn">Cotiza Ahora</a>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>CHEVROLET LUV D-MAX</h3>
+          <div class="card-img">
+            <img src="{% static 'img/auto3.jpg' %}" alt="" class="img-fluid">
+          </div>
+          <h4><sup>$</sup>283<span> /mes </span></h4>
+          <a href="https://bit.ly/autoprontosas" class="buy-btn">Cotiza Ahora</a>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>CAMIONES</h3>
+          <div class="card-img">
+            <img src="{% static 'img/camion.jpg' %}" alt="" class="img-fluid">
+          </div>
+          <h4><sup>$</sup>389<span> /mes </span></h4>
+          <a href="https://bit.ly/autoprontosas" class="buy-btn">Cotiza Ahora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock%}

@@ -1,0 +1,209 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block link1 %}active{% endblock link1 %}
+{% block content %}
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row gy-4 d-flex justify-content-between">
+      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+        <h2 data-aos="fade-up"></h2>
+        <p data-aos="fade-up" data-aos-delay="100"></p>
+       
+      </div>
+      <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-header" style="padding: 36.35px  ;">
+  <h2>TE AYUDAMOS A LLEGAR LEJOS</h2>
+</div>
+<section id="about" class="about" style="padding: 35px 0;">
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
+      <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FAutoProntoSAS%2Fvideos%2F363441376243079%2F&show_text=false&width=560&t=0" 
+        width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+        allowFullScreen="true"></iframe>
+      </div>
+      <div class="col-lg-6 content order-last  order-lg-first">
+        <h3>¿QUIENES SOMOS?</h3>
+        <p>Financiamiento vehicular y servicios complementarios. más experimentado del país.
+          Brindamos la oportunidad a miles de ecuatorianos de cumplir sus sueños en la obtención de bienes
+          (vehículos nuevos o seminuevos) con valores desde $2.000 hasta $36.000. Adjudicamos un promedio de
+          2 a 3 vehículos mensualmente. Con presencia a nivel nacional, en las principales ciudades del país.
+          Manejamos tecnología de punta en nuestras plataformas tecnológicas garantizando la seguridad de su
+          inversión.
+        </p>
+        <ul>
+          <li data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-briefcase"></i>
+            <div>
+              <h5>MISION</h5>
+              <p>Ser una alternativa de financiación accesible y segura para personas, empresas que quieran concretar sus proyectos. Difundir y defender en forma persistente el sistema de ahorro, previo en beneficio de la sociedad, promoviendo así la cultura del ahorro. Crear valor escuchando e incorporando adecuadamente 
+                las sugerencias de nuestros clientes mediante la creatividad y el compromiso de nuestros colaboradores.</p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-sharp fa-solid fa-arrows-to-eye"></i>
+            <div>
+              <h5>VISION</h5>
+              <p>Avanzar cada día hacia el fortalecimiento de nuestra empresa haciendo énfasis a la seriedad,
+                la confiablidad y el cumplimiento de los compromisos pactados con nuestros clientes.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="featured-services" class="featured-services" style="padding: 45px 0;">
+  <div class="section-header" style="padding: 15px  ;">
+    <h2>NUESTROS VALORES</h2>
+  </div>
+  <div class="container">
+    <div class="row gy-4">
+      {% for service in services %}
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+        <div class="icon flex-shrink-0"><i class="fa-solid fa-{{ service.icon }}"></i></div>
+        <div>
+          <h4 class="title">{{ service.tit }}</h4>
+          <p class="description">{{ service.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section id="call-to-action" class="call-to-action">
+  <div class="container" data-aos="zoom-out">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h3>Cotiza con nosotros</h3>
+        <p> En Autopronto, nos comprometemos a brindarte productos y servicios de 
+          la más alta calidad, respaldados por décadas de experiencia y un equipo de profesionales apasionados 
+          por la excelencia.</p>
+        <a class="cta-btn" href="https://bit.ly/autoprontosas">Obten Tu Vehiculo Ahora Mismo</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="service" class="services pt-0">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <span>Our Services</span>
+      <h2>ENTREGAS REALES</h2>
+    </div>
+    <div class="row gy-4">
+      {% for entrega in entregas %}
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card">
+          <div class="card-img">
+            <img src="{{entrega.img.url}}" alt="" class="img-fluid">
+          </div>
+          <h3><a  class="stretched-link">{{entrega.tit}}</a></h3>
+          <p>{{entrega.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="slides-1 swiper" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        {% for testimonio in testimonios %}
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{{testimonio.img.url}}" class="testimonial-img" alt="">
+            <h3>{{testimonio.nom}}</h3>
+            <h4>{{testimonio.ocu}}</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              {{testimonio.tes}}
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <div>
+      <iframe style="border:0; width: 100%; height: 340px;"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.005767496301!2d-78.49477478293852!3d-0.18849300791984455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a66b2fc36b5%3A0x78865f8815933b31!2sAvenida%20Mariana%20de%20Jes%C3%BAs%20%26%20Jorge%20Juan%2C%20170518%20Quito%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1710708650553!5m2!1ses!2sus"
+        frameborder="0" allowfullscreen=""></iframe>
+    </div>
+    <div class="row gy-4 mt-4">
+      <div class="col-lg-4">
+        <div class="info-item d-flex">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h4>Ubicación:</h4>
+            <p>AV. Mariana de Jesús Oe2-12 y Jorge Juan.</p>
+          </div>
+        </div>
+        <div class="info-item d-flex">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h4>Correo:</h4>
+            <p>autopronto.ec@gmail.com</p>
+          </div>
+        </div>
+        <div class="info-item d-flex">
+          <i class="bi bi-phone flex-shrink-0"></i>
+          <div>
+            <h4>Telefono:</h4>
+            <p>098 310 3715</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <form id="contactForm" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electronico" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+          </div>
+          <div class="text-center"><button type="submit" id="sendMessageButton">Enviar Mensaje</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let message = document.querySelector('textarea[name="message"]').value;
+  
+      let whatsappNumber = "+593984498063";
+      let whatsappMessage = `Nuevo mensaje de: ${name} Correo Electronico: ${email}  Mensaje:${message}`;
+      let whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  
+      window.open(whatsappLink, '_blank');
+    });
+  });
+  </script>
+{% endblock%}

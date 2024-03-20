@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block link5 %}active{% endblock link5 %}
+{% block content %}
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="height: 375px; background-image: url('/static/img/portada_g.gif');">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>ENTREGAS</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{% url 'home' %}">INICIO</a></li>
+          <li>ENTREGAS</li>
+        </ol>
+      </div>
+    </nav>
+  </div>
+<section id="service" class="services pt-0" style="padding: 15px;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>NUESTRAS ENTREGAS</h2>
+    </div>
+    <div class="row gy-4">
+      {% for galeria in galeria %}
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card">
+          <div class="card-img">
+            <img src="{{galeria.img.url}}" alt="" class="img-fluid">
+          </div>
+          <h3><a  class="stretched-link"></a></h3>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock%}
